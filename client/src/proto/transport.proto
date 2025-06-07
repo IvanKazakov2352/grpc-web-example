@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package Rpc;
+
+service Transport {
+  rpc Unary (RpcRequest) returns (RpcResponse);
+  rpc ServerStream (RpcRequest) returns (stream RpcResponse);
+}
+
+message RpcRequest {
+  string text = 1;
+}
+
+message RpcResponse {
+  string message = 1;
+}
