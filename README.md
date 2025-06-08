@@ -1,7 +1,8 @@
 # gRPC Web Example
 
-# Client: Angular 19
-# Server: C# ASP.NET 8.0
+Client: Angular 19
+
+Server: C# ASP.NET 8.0
 
 # Запуск
 
