@@ -36,14 +36,14 @@ class RpcRequest$Type extends MessageType<RpcRequest> {
             { no: 1, name: "text", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
         ]);
     }
-    override create(value?: PartialMessage<RpcRequest>): RpcRequest {
+    create(value?: PartialMessage<RpcRequest>): RpcRequest {
         const message = globalThis.Object.create((this.messagePrototype!));
         message.text = "";
         if (value !== undefined)
             reflectionMergePartial<RpcRequest>(this, message, value);
         return message;
     }
-    override internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: RpcRequest): RpcRequest {
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: RpcRequest): RpcRequest {
         let message = target ?? this.create(), end = reader.pos + length;
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
@@ -62,7 +62,7 @@ class RpcRequest$Type extends MessageType<RpcRequest> {
         }
         return message;
     }
-    override internalBinaryWrite(message: RpcRequest, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+    internalBinaryWrite(message: RpcRequest, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
         /* string text = 1; */
         if (message.text !== "")
             writer.tag(1, WireType.LengthDelimited).string(message.text);
@@ -83,14 +83,14 @@ class RpcResponse$Type extends MessageType<RpcResponse> {
             { no: 1, name: "message", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
         ]);
     }
-    override create(value?: PartialMessage<RpcResponse>): RpcResponse {
+    create(value?: PartialMessage<RpcResponse>): RpcResponse {
         const message = globalThis.Object.create((this.messagePrototype!));
         message.message = "";
         if (value !== undefined)
             reflectionMergePartial<RpcResponse>(this, message, value);
         return message;
     }
-    override internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: RpcResponse): RpcResponse {
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: RpcResponse): RpcResponse {
         let message = target ?? this.create(), end = reader.pos + length;
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
@@ -109,7 +109,7 @@ class RpcResponse$Type extends MessageType<RpcResponse> {
         }
         return message;
     }
-    override internalBinaryWrite(message: RpcResponse, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+    internalBinaryWrite(message: RpcResponse, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
         /* string message = 1; */
         if (message.message !== "")
             writer.tag(1, WireType.LengthDelimited).string(message.message);
